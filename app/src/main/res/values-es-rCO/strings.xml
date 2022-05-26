@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth_login">Iniciar sesión</string>
+    <string name="auth_email">"Correo electrónico "</string>
+    <string name="auth_password">"Contraseña "</string>
+    <string name="auth_bycarrier">Iniciar sesión como transportista</string>
+    <string name="auth_createaccount">Crear cuenta</string>
+    <string name="auth_showpassword">Mostrar contraseña</string>
+    <string name="regist_fullname">Nombre completo</string>
+    <string name="boardinit_info">Ingresa un producto, llena la información y valida el precio del transporte</string>
+    <string name="solicite_service_temperature">Ideal temperature</string>
+    <string name="boardinit_request_service">Solicitar servicio</string>
+    <string name="request_service_weight">Peso</string>
+    <string name="request_service_description">Descripción</string>
+    <string name="info_service_history">Historial de servicios</string>
+    <string name="request_service_address_destination">Dirección de destino</string>
+    <string name="board_services_accept_service">Aceptar servicio</string>
+    <string name="request_service_origin_address">Dirección de origen</string>
+    <string name="request_service_name_product">Nombre del producto</string>
+    <string name="request_service_price">Precio</string>
+    <string name="request_service_package_name">Nombre del paquete</string>
+</resources>

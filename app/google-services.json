@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906659603935",
+    "project_id": "fastfreezer-dd39e",
+    "storage_bucket": "fastfreezer-dd39e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906659603935:android:3d714054bb4534a252506a",
+        "android_client_info": {
+          "package_name": "danis.projects.partners.fastfreezer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906659603935-7eojuaebl11q3ms5153pfhdedrl159jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtQHJ4hQ-Pj4QGsDqXiNBSReNtPYJxf8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906659603935-7eojuaebl11q3ms5153pfhdedrl159jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

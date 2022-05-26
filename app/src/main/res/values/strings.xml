@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name" translatable="false">Fast Freezer</string>
+    <string name="auth_login">Log in</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_bycarrier">Sign in as a carrier</string>
+    <string name="auth_createaccount">Create Account</string>
+    <string name="auth_showpassword">Show password</string>
+    <string name="regist_fullname">Full name</string>
+    <string name="boardinit_info">Enter a product, fill in the information and validate the transport price</string>
+    <string name="solicite_service_temperature">Temperatura ideal</string>
+    <string name="boardinit_request_service">Request service</string>
+    <string name="request_service_weight">Weight</string>
+    <string name="request_service_description">Description</string>
+    <string name="info_service_history">Service history</string>
+    <string name="board_services_accept_service">Accept service</string>
+    <string name="request_service_address_destination">Destination address</string>
+    <string name="request_service_origin_address">Origin address</string>
+    <string name="request_service_name_product">Product name</string>
+    <string name="request_service_price">Price</string>
+    <string name="request_service_package_name">Package name</string>
+    <string name="data" translatable="false">bindig...</string>
+</resources>
