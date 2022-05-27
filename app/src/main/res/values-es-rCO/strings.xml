@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="auth_login">Iniciar sesión</string>
-    <string name="auth_email">"Correo electrónico "</string>
+    <string name="auth_login">Iniciar sesion</string>
+    <string name="auth_email">"Correo electronico "</string>
     <string name="auth_password">"Contraseña "</string>
     <string name="auth_bycarrier">Iniciar sesión como transportista</string>
     <string name="auth_createaccount">Crear cuenta</string>
@@ -19,4 +19,5 @@
     <string name="request_service_name_product">Nombre del producto</string>
     <string name="request_service_price">Precio</string>
     <string name="request_service_package_name">Nombre del paquete</string>
+    <string name="accept_service">Aceptar servicio</string>
 </resources>

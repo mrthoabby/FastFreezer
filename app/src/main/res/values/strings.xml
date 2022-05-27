@@ -20,4 +20,5 @@
     <string name="request_service_price">Price</string>
     <string name="request_service_package_name">Package name</string>
     <string name="data" translatable="false">bindig...</string>
+    <string name="accept_service">Accept service</string>
 </resources>

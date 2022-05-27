@@ -25,17 +25,18 @@
         android:ems="10"
         android:hint="@string/request_service_name_product"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/inputTemperature"
         app:layout_constraintStart_toStartOf="@+id/inputTemperature"
         app:layout_constraintTop_toBottomOf="@+id/inputTemperature" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnSoliciteService"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:background="@color/blue"
-        android:text="Button"
+        android:text="@string/boardinit_request_service"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spinnerInputWeightProduct"
@@ -49,6 +50,7 @@
         android:ems="10"
         android:hint="@string/solicite_service_temperature"
         android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -58,6 +60,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/app_name"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/inputProductName"
         app:layout_constraintStart_toStartOf="@+id/inputProductName"
         app:layout_constraintTop_toBottomOf="@+id/inputProductName" />
@@ -83,7 +87,7 @@
         android:gravity="start|top"
         android:hint="@string/request_service_description"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnSoliciteService"
         app:layout_constraintEnd_toEndOf="@+id/spinnerInputWeightProduct"
         app:layout_constraintStart_toStartOf="@+id/spinnerInputWeightProduct"
         app:layout_constraintTop_toBottomOf="@+id/spinnerInputWeightProduct" />
