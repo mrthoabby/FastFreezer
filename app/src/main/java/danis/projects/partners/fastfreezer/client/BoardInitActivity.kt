@@ -14,6 +14,7 @@ class BoardInitActivity : AppCompatActivity() {
         val view = binding.root.apply {
             setContentView(this)
         }
+        setup()
     }
     private fun setup(){
         addEventsListeners();

@@ -13,11 +13,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/logo_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,19 +41,22 @@
         app:layout_constraintBottom_toTopOf="@+id/inputRegisterPersonName"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/inputRegisterPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/regist_fullname"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:textColorHint="#546E7A"
         app:layout_constraintBottom_toTopOf="@+id/inputRegisterUserEmail"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/inputRegisterUserEmail"
@@ -61,10 +64,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/auth_email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:text="@string/auth_email"
+        android:textColorHint="#546E7A"
         app:layout_constraintBottom_toTopOf="@+id/inputRegisterUserPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,12 +79,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/auth_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="@string/auth_password"
+        android:textColorHint="#546E7A"
         app:layout_constraintBottom_toTopOf="@+id/checkSwitchShowPassword"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:importantForAutofill="no" />
 
     <CheckBox
         android:id="@+id/checkSwitchShowPassword"
@@ -103,7 +109,8 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <ImageView
         android:id="@+id/imageView2"

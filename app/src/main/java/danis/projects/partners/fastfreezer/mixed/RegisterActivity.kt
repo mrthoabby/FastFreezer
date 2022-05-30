@@ -2,22 +2,23 @@ package danis.projects.partners.fastfreezer.mixed
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import danis.projects.partners.fastfreezer.data.RemoteDataManager
 import danis.projects.partners.fastfreezer.data.RunTimeDataManager
 import danis.projects.partners.fastfreezer.data.entidades.User
 import danis.projects.partners.fastfreezer.data.entidades.UserType
 import danis.projects.partners.fastfreezer.databinding.ActivityRegisterBinding
 import danis.projects.partners.fastfreezer.util.AuthenticationType
-import danis.projects.partners.fastfreezer.util.EMAIL_USER
+import danis.projects.partners.fastfreezer.util.USER_TABLE
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var goToIntent: Intent
-    private lateinit var authenticationType: AuthenticationType
     private lateinit var mAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +26,12 @@ class RegisterActivity : AppCompatActivity() {
         val view = binding.root.apply {
             setContentView(this)
         }
+        setup()
     }
 
     override fun onStart() {
         super.onStart()
         if (mAuth.currentUser != null) {
-            toRegisterUser()
         }
     }
 
@@ -57,6 +58,9 @@ class RegisterActivity : AppCompatActivity() {
             }
 
         }
+        binding.checkSwitchShowPassword.setOnCheckedChangeListener { checkbox, ischecked ->
+            switchShowPassword(ischecked)
+        }
     }
 
     private fun isCredentialsValid(): Boolean =
@@ -68,8 +72,8 @@ class RegisterActivity : AppCompatActivity() {
             binding.inputRegisterUserPassword.text.toString()
         ).addOnCompleteListener {
             if (it.isSuccessful) {
-                FirebaseAuth.getInstance().currentUser?.let { it ->
-                    FirebaseDatabase.getInstance().getReference("Users").child(
+                mAuth.currentUser?.let { it ->
+                    RemoteDataManager.ref.child(USER_TABLE).child(
                         it.uid
                     ).setValue(
                         User(
@@ -103,5 +107,16 @@ class RegisterActivity : AppCompatActivity() {
     private fun isCarrier(): Boolean {
         val item: UserType = binding.spinnerTypeUser.selectedItem as UserType
         return item.authenticationType == AuthenticationType.CARRIER_BASIC
+    }
+
+    private fun switchShowPassword(isCheck: Boolean) {
+        if (isCheck) {
+            binding.inputRegisterUserPassword .inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.inputRegisterUserPassword.setSelection(binding.inputRegisterUserPassword.length())
+        } else {
+            binding.inputRegisterUserPassword.inputType =
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.inputRegisterUserPassword.setSelection(binding.inputRegisterUserPassword.length())
+        }
     }
 }
