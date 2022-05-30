@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/local.properties
+/app/src/main/local.properties
+/.idea
+/buildSrc/build/*
