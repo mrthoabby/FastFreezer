@@ -20,11 +20,7 @@
             android:name=".mixed.MapActivity"
             android:exported="true">
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity
             android:name=".carrier.GetServicesActivity"
@@ -43,7 +39,12 @@
             android:exported="false" />
         <activity
             android:name=".mixed.AuthActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

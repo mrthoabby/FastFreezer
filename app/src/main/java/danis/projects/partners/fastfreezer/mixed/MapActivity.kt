@@ -11,19 +11,26 @@ import com.google.firebase.database.DatabaseError
 import danis.projects.partners.fastfreezer.R
 import danis.projects.partners.fastfreezer.data.RemoteDataManager
 import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.api.net.PlacesClient
 import danis.projects.partners.fastfreezer.util.SERVICE_TABLE
 
 class MapActivity : AppCompatActivity() ,OnMapReadyCallback{
     private lateinit var map:GoogleMap
-
+private lateinit var placesClient:PlacesClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_map)
         setup()
+
     }
 
     private fun setup(){
         createFragment()
+    }
+    private fun initialicePlaces(){
+        Places.initialize(this,resources.getString(R.string.google_maps_key))
+        placesClient = Places.createClient(this)
     }
 
     private fun lasTsetEventListeners(){
