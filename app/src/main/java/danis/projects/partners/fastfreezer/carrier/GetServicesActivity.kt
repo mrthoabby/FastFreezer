@@ -54,6 +54,10 @@ class GetServicesActivity : AppCompatActivity() {
         })
     }
 
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
+
     private fun setDataSources(){
         binding.listGetServices.layoutManager = LinearLayoutManager(this)
         binding.listGetServices.adapter = GetServicesRecyclerAdapter(this,listContent)

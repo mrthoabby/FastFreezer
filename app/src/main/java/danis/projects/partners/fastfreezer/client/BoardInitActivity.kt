@@ -24,6 +24,9 @@ class BoardInitActivity : AppCompatActivity() {
             launchFormService()
         }
     }
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun launchFormService(){
         val intent = Intent(this,RequestProductActivity::class.java)
         startActivity(intent)

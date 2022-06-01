@@ -13,6 +13,7 @@ import danis.projects.partners.fastfreezer.data.entidades.WeightPrice
 import danis.projects.partners.fastfreezer.databinding.ActivityRequestProductBinding
 import danis.projects.partners.fastfreezer.mixed.MapActivity
 import danis.projects.partners.fastfreezer.util.*
+import java.util.*
 
 class RequestProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRequestProductBinding
@@ -46,7 +47,9 @@ private fun setup(){
     private fun isDataValid(): Boolean = binding.inputProductName.text.isNotEmpty()
                 && binding.inputTemperature.text.isNotEmpty()
                 && binding.inputServiceDescription.text.isNotEmpty()
-
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun addEventListeners(){
         binding.btnSoliciteService.setOnClickListener {
             if(isDataValid()){
@@ -61,30 +64,17 @@ private fun setup(){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     private fun createService(){
         val data:WeightPrice = binding.spinnerInputWeightProduct.selectedItem as WeightPrice
-        mAuth.currentUser?.let { it ->
-            RemoteDataManager.ref.child(SERVICE_TABLE).push().setValue(
-                Service(it.uid,
-                    null,
-                    ServiceStatus.ENSOLICITUD.nameString,
-                    data.precio,
-                    it.displayName,
-                    binding.inputProductName.text.toString(),
-                    binding.inputServiceDescription.text.toString(),
-                    binding.inputTemperature.text.toString(),
-                    data.peso,
-                )
-            ).addOnCompleteListener {
-                if (it.isSuccessful){
-                    showToast("Creando servicio")
-                    updateStatusUser()
-                    launchSplashService()
-                }
-                else {
-                    showToast("No fue posible registrar al usuario")
-                }
 
+        mAuth.currentUser?.let { it ->
+            Util.fkClient = it.uid
+            Util.price = data.precio
+            Util.packageNameService = binding.inputProductName.text.toString()
+            Util.description = binding.inputServiceDescription.text.toString()
+            Util.temperature = binding.inputTemperature.text.toString()
+            Util.weight = data.peso
+            updateStatusUser()
+            launchSplashService()
             }
-        }
     }
     private fun updateStatusUser():Boolean{
         var result:Boolean
@@ -108,7 +98,7 @@ private fun setup(){
     }
 
     private fun launchSplashService() {
-        goToIntent = Intent(this, MapActivity::class.java)
+        goToIntent = Intent(this, PlaceClientActivity::class.java)
         startActivity(goToIntent)
     }
 }

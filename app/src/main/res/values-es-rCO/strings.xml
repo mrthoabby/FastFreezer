@@ -20,4 +20,7 @@
     <string name="request_service_price">Precio</string>
     <string name="request_service_package_name">Nombre del paquete</string>
     <string name="accept_service">Aceptar servicio</string>
+    <string name="places_to">Hasta</string>
+    <string name="places_from">Deste</string>
+    <string name="places_input_address">Ingresar dirección</string>
 </resources>

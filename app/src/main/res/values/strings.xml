@@ -21,4 +21,7 @@
     <string name="request_service_package_name">Package name</string>
     <string name="data" translatable="false">bindig...</string>
     <string name="accept_service">Accept service</string>
+    <string name="places_to">To</string>
+    <string name="places_from">From</string>
+    <string name="places_input_address">Input address</string>
 </resources>

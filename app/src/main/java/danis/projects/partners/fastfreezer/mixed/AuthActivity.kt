@@ -10,6 +10,7 @@ import danis.projects.partners.fastfreezer.carrier.GetServicesActivity
 import danis.projects.partners.fastfreezer.client.BoardInitActivity
 import danis.projects.partners.fastfreezer.databinding.ActivityAuthBinding
 import danis.projects.partners.fastfreezer.util.AuthenticationType
+import danis.projects.partners.fastfreezer.util.Util
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
@@ -59,13 +60,21 @@ class AuthActivity : AppCompatActivity() {
             }
         }
     }
-
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
     private fun showToast(message: String) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
     private fun launchHome() {
-        goToIntent = if (isCarrier()) Intent(this, GetServicesActivity::class.java)
-        else Intent(this, BoardInitActivity::class.java)
+        if(isCarrier()){
+            Util.typeUser = AuthenticationType.CARRIER_BASIC
+            goToIntent =Intent(this, GetServicesActivity::class.java)
+        }
+        else{
+            Util.typeUser = AuthenticationType.CLIENT_BASIC
+            goToIntent = Intent(this, BoardInitActivity::class.java)
+        }
         startActivity(goToIntent)
     }
 
